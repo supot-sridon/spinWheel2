@@ -16,6 +16,8 @@
     wheel.style.transform = `rotate(${deg}deg)`;
     // Apply the blur
     wheel.classList.add('blur');
+    console.log(deg);
+
   });
 
   wheel.addEventListener('transitionend', () => {
@@ -30,6 +32,18 @@
     // Use modulus to get the rest value from 360
     const actualDeg = deg % 360;
     // Set the real rotation instantly without animation
-    wheel.style.transform = `rotate(${actualDeg}deg)`;
+    // wheel.style.transform = `rotate(${actualDeg}deg)`;
+    wheel.style.transform = `rotate(30deg)`;
+
+    let x = 0;
+    if(actualDeg < 30){
+      x = 150
+    }else if(actualDeg < 60){
+      x = 800;
+    }else{
+      x = 'other';
+    }
+
+    console.log(x);
   });
 })();
